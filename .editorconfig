@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CS8602: Olası bir null başvurunun başvurma işlemi.
+dotnet_diagnostic.CS8602.severity = silent
+
+# IDE0022: Metot için blok gövdesi kullan
+dotnet_diagnostic.IDE0022.severity = none
+
+# CS1998: Zaman uyumsuz yöntemde 'await' işleçleri yok ve zaman uyumlu çalışacak
+dotnet_diagnostic.CS1998.severity = silent

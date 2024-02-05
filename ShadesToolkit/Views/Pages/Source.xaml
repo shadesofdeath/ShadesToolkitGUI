@@ -1,0 +1,128 @@
+﻿<Page
+    x:Class="ShadesToolkit.Views.Pages.Source"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShadesToolkit.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="ShadesToolkit"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <ui:Button x:Name="add_btn" BorderThickness="0.6" MinWidth="60" CornerRadius="8" Click="Add_Btn_Click">
+                <ui:Button.ContextMenu>
+                    <ContextMenu x:Name="contextMenu" Placement="MousePoint" StaysOpen="False">
+                        <MenuItem Header="Select WIM" Click="AddWim_ClickAsync"/>
+                        <MenuItem Header="Select ISO" Click="AddIso_ClickAsync"/>
+                    </ContextMenu>
+                </ui:Button.ContextMenu>
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="Add20" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="Add" Margin="0,12,0,0"/>
+                </StackPanel>
+            </ui:Button>
+
+        </WrapPanel>
+        <StackPanel x:Name="CleanupMountsPanel" Visibility="Hidden" Grid.Row="1" Margin="0,80,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <ui:ProgressRing x:Name="DataProgress"  IsIndeterminate="True" Width="42" Height="42"/>
+            <ui:TextBlock x:Name="DataText" Text="Cleaning in progress, please wait.."  Margin="0,12,0,0" Foreground="White">
+                <ui:TextBlock.Effect>
+                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="2" Opacity="0.9"/>
+                </ui:TextBlock.Effect>
+            </ui:TextBlock>
+        </StackPanel>
+
+        <ui:DataGrid Grid.Row="1" x:Name="sourceDataGrid" AutoGenerateColumns="False"  IsReadOnly="True" ContextMenuOpening="sourceDataGrid_ContextMenuOpening">
+
+
+            <ui:DataGrid.ContextMenu>
+                <ContextMenu x:Name="contextMenuControl">
+                    <MenuItem Header="Mount" Click="Mount_ClickAsync"/>
+                    <MenuItem Header="Unmount" Click="Unmount_ClickAsync"/>
+                    <MenuItem Header="Forget" Click="Forget_ClickAsync" />
+                </ContextMenu>
+            </ui:DataGrid.ContextMenu>
+            <ui:DataGrid.Columns>
+                <DataGridTextColumn Width="Auto" Header="Operating System" Binding="{Binding OS}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Architecture" Binding="{Binding Architecture}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Flags" Binding="{Binding Flags}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Index" Binding="{Binding Index}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Size" Binding="{Binding Size}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="Auto" Header="Status">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="8,0,8,0">
+                                <TextBlock Text="{Binding Status}" VerticalAlignment="Center"/>
+                                <ui:SymbolIcon Foreground="Red" Margin="0,0,8,0" Symbol="Dismiss32" Visibility="{Binding IsInvalidStatus}"/>
+                                <ui:SymbolIcon Foreground="LawnGreen" Symbol="Checkmark32" Margin="8,0,8,0" Visibility="{Binding IsMountedStatus}"/>
+                                <ui:ProgressRing x:Name="progressRing"  Progress="{Binding Progress}" Width="16" Height="16" Margin="8,0,0,0" Visibility="{Binding ProgressRingVisibility}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Width="Auto" Header="Language" Binding="{Binding Language}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Last Changes" Binding="{Binding LastChanges}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="4,0,4,0"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </ui:DataGrid.Columns>
+        </ui:DataGrid>
+    </Grid>
+</Page>

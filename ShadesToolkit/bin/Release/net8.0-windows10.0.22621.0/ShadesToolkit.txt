@@ -1,0 +1,462 @@
+﻿2024-02-04 18:30:55, Error                 DISM   API: PID=4608 TID=1600 ImageFilePath does not exist: "Windows 11 Home" - DismMountImageInternal(hr:0x80070057)
+[5140.15848] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [5dc62126-6b74-440c-89cd-d8dbd3a030fe]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[7740.15604] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [c98d423a-e9ab-4e09-9374-62b0ffd0f5e0]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[13376.16996] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [2adfcee6-90de-43df-a307-1893e0acc324]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[12788.8260] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [901ae583-55c9-454c-a283-a3b27303beab]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[14528.4840] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [6cc59579-97d5-473d-8fe1-6694663a8a74]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[16624.15392] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [8e5ef288-bc6f-482e-bde2-befa228a58f6]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[11996.5432] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [12222d03-3b37-46f9-8c5d-6de17d821aa1]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[11996.5432] Wimserv process started for mount guid 12222d03-3b37-46f9-8c5d-6de17d821aa1; PID is 5616
+[5616.3020] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[5616.3020] Mount complete.
+[5616.12612] Received unmount request.
+[5616.12612] Unmount complete.
+[5616.15512] Wimserv exiting per terminate event.
+[5616.15512] Wimserv stopped.
+[12300.14108] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [35ee5a8e-b6ae-4e52-b253-f0e2070082e8]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[9248.10280] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[9248.17000] [0xc1420127] WIMMountImageHandle:(1132)
+[9248.17000] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[9248.17000] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 21:32:58, Error                 DISM   DISM WIM Provider: PID=9248 TID=17000 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 21:32:58, Error                 DISM   API: PID=9248 TID=17000 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 21:32:58, Error                 DISM   API: PID=9248 TID=17000 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 21:32:58, Error                 DISM   API: PID=9248 TID=8752 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 21:32:58, Error                 DISM   API: PID=9248 TID=8752 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[10844.14052] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10844.3556] [0xc1420127] WIMMountImageHandle:(1132)
+[10844.3556] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[10844.3556] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 21:34:35, Error                 DISM   DISM WIM Provider: PID=10844 TID=3556 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 21:34:37, Error                 DISM   API: PID=10844 TID=3556 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 21:34:37, Error                 DISM   API: PID=10844 TID=3556 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 21:34:37, Error                 DISM   API: PID=10844 TID=13108 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 21:34:37, Error                 DISM   API: PID=10844 TID=13108 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[10844.2392] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10844.7644] [0xc1420127] WIMMountImageHandle:(1132)
+[10844.7644] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[10844.7644] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 21:35:16, Error                 DISM   DISM WIM Provider: PID=10844 TID=7644 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 21:35:16, Error                 DISM   API: PID=10844 TID=7644 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 21:35:16, Error                 DISM   API: PID=10844 TID=7644 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 21:35:16, Error                 DISM   API: PID=10844 TID=5352 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 21:35:16, Error                 DISM   API: PID=10844 TID=5352 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[10844.16364] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10552.8916] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [fedb45a8-1fa2-4c2f-b615-f78e017cabe9]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[10552.8916] Wimserv process started for mount guid fedb45a8-1fa2-4c2f-b615-f78e017cabe9; PID is 7596
+[7596.16852] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[7596.16852] Mount complete.
+[13064.10916] [0xc1420127] WIMMountImageHandle:(1132)
+[13064.10916] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[13064.10916] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 22:06:20, Error                 DISM   DISM WIM Provider: PID=13064 TID=10916 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 22:06:20, Error                 DISM   API: PID=13064 TID=10916 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 22:06:20, Error                 DISM   API: PID=13064 TID=10916 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 22:06:20, Error                 DISM   API: PID=13064 TID=13116 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 22:06:20, Error                 DISM   API: PID=13064 TID=13116 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[7596.17028] Received unmount request.
+[7596.17028] Unmount complete.
+[7596.4712] Wimserv exiting per terminate event.
+[7596.4712] Wimserv stopped.
+[16508.2460] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [b8d7b614-b568-4a42-a94d-d5eac579d50a]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[6652.15372] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [f93e7dd6-886c-4d41-9d01-fa9388b9f4c3]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[10076.15268] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10076.13936] [0xc1420127] WIMMountImageHandle:(1132)
+[10076.13936] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[10076.13936] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 22:13:02, Error                 DISM   DISM WIM Provider: PID=10076 TID=13936 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 22:13:02, Error                 DISM   API: PID=10076 TID=13936 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 22:13:02, Error                 DISM   API: PID=10076 TID=13936 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 22:13:02, Error                 DISM   API: PID=10076 TID=10660 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 22:13:02, Error                 DISM   API: PID=10076 TID=10660 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[10076.12792] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[11232.17684] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [a30c0f4c-d3b1-45a2-aeaa-65cdd57ac8ec]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[13612.12516] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [659ec58c-2bdb-4f60-ad40-efca9a6a60dd]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[13612.12516] Wimserv process started for mount guid 659ec58c-2bdb-4f60-ad40-efca9a6a60dd; PID is 19008
+[19008.5804] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[19008.5804] Mount complete.
+[19008.5804] Received unmount request.
+[19008.5804] Unmount complete.
+[19008.19328] Wimserv exiting per terminate event.
+[19008.19328] Wimserv stopped.
+[1592.11900] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [e0dc7d6f-3861-4ffd-bde1-cf608d9d2277]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[1592.11900] Wimserv process started for mount guid e0dc7d6f-3861-4ffd-bde1-cf608d9d2277; PID is 19260
+[19260.18696] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[19260.18696] Mount complete.
+[19260.7616] Received unmount request.
+[19260.7616] Unmount complete.
+[19260.8824] Wimserv exiting per terminate event.
+[19260.8824] Wimserv stopped.
+[18352.6580] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [e3da6b83-08ef-4772-a584-17c4d4abf908]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[12924.18280] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[12924.12448] [0xc1420127] WIMMountImageHandle:(1132)
+[12924.12448] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[12924.12448] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 23:26:45, Error                 DISM   DISM WIM Provider: PID=12924 TID=12448 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 23:26:45, Error                 DISM   API: PID=12924 TID=12448 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 23:26:45, Error                 DISM   API: PID=12924 TID=12448 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 23:26:45, Error                 DISM   API: PID=12924 TID=18128 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 23:26:45, Error                 DISM   API: PID=12924 TID=18128 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[12924.4664] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[13892.18620] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[13892.18620] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17804.2532] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [396e4102-d85e-44da-b0fa-b904629bec3a]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[10280.6820] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10280.6820] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18324.7924] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [7b20e501-4fac-4aaa-92ba-b1a5b6d33ef0]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[18240.11480] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18240.11480] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18228.6584] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [4d34484a-980f-4e38-b66e-bc192dfd516a]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[8916.13724] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[8916.13724] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[13936.17424] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [f7e3d485-762d-457c-973e-7157e832fcb0]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[2704.17540] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[2704.17540] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18216.10888] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [2652cd0a-36fc-46b2-aeed-1b38008c7b84]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[5304.17184] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[5304.17184] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17412.7772] [0xc1420127] WIMMountImageHandle:(1132)
+[17412.7772] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[17412.7772] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 23:42:50, Error                 DISM   DISM WIM Provider: PID=17412 TID=7772 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 23:42:50, Error                 DISM   API: PID=17412 TID=7772 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 23:42:50, Error                 DISM   API: PID=17412 TID=7772 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 23:42:50, Error                 DISM   API: PID=17412 TID=14980 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 23:42:50, Error                 DISM   API: PID=17412 TID=14980 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[17412.16488] [0xc1420127] WIMMountImageHandle:(1132)
+[17412.16488] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[17412.16488] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 23:42:52, Error                 DISM   DISM WIM Provider: PID=17412 TID=16488 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 23:42:52, Error                 DISM   API: PID=17412 TID=16488 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 23:42:52, Error                 DISM   API: PID=17412 TID=16488 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 23:42:52, Error                 DISM   API: PID=17412 TID=5768 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 23:42:52, Error                 DISM   API: PID=17412 TID=5768 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[10588.4456] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [d412e21c-cf40-4e15-930d-ae12afc413a5]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[17772.6416] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17772.6416] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[7960.2644] [0xc1420127] WIMMountImageHandle:(1132)
+[7960.2644] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[7960.2644] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-04 23:48:13, Error                 DISM   DISM WIM Provider: PID=7960 TID=2644 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-04 23:48:13, Error                 DISM   API: PID=7960 TID=2644 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-04 23:48:13, Error                 DISM   API: PID=7960 TID=2644 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-04 23:48:13, Error                 DISM   API: PID=7960 TID=15884 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-04 23:48:13, Error                 DISM   API: PID=7960 TID=15884 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[6872.18656] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [28e3ee0d-416e-4771-a087-3013be72894e]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[17448.8164] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17448.8164] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[10296.18888] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [fbb55f5b-8ab7-40c7-b6b0-f44de2fe5aa2]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[5268.11292] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[5268.11292] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17588.1572] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [30bbf9bc-e280-42b7-9ac2-2d3c1e514a5d]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[17260.4824] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17260.4824] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[11596.6216] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [0afc015e-d0f9-4a21-9be8-c2dced78f69f]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[15580.14224] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[14976.18396] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[7900.8588] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[7900.8588] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[7900.8588] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[7900.8588] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[7900.8588] [0xc1420117] RestoreMountDirectory:(422)
+[7900.8588] [0xc1420117] WIMUnmountImageHandle:(1678)
+[7900.8588] [0x8144012d] 
+[18216.9468] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[18216.9468] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[18216.9468] [0xc1420117] RestoreMountDirectory:(422)
+[18216.9468] [0xc1420117] WIMUnmountImageHandle:(1678)
+[18216.9468] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-05 00:10:12, Error                 DISM   DISM WIM Provider: PID=18216 TID=9468 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-05 00:10:12, Error                 DISM   API: PID=18216 TID=9468 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-05 00:10:12, Error                 DISM   API: PID=18216 TID=9468 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-05 00:10:12, Error                 DISM   API: PID=18216 TID=19208 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[11932.3416] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[11932.3416] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[11932.3416] [0xc1420117] RestoreMountDirectory:(422)
+[11932.3416] [0xc1420117] WIMUnmountImageHandle:(1678)
+[11932.3416] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-05 00:11:15, Error                 DISM   DISM WIM Provider: PID=11932 TID=3416 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-05 00:11:15, Error                 DISM   API: PID=11932 TID=3416 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-05 00:11:15, Error                 DISM   API: PID=11932 TID=3416 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-05 00:11:15, Error                 DISM   API: PID=11932 TID=16372 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[11932.15744] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[11932.15744] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[11932.15744] [0xc1420117] RestoreMountDirectory:(422)
+[11932.15744] [0xc1420117] WIMUnmountImageHandle:(1678)
+[11932.15744] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-05 00:11:28, Error                 DISM   DISM WIM Provider: PID=11932 TID=15744 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-05 00:11:28, Error                 DISM   API: PID=11932 TID=15744 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-05 00:11:28, Error                 DISM   API: PID=11932 TID=15744 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-05 00:11:28, Error                 DISM   API: PID=11932 TID=18424 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[11384.2180] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[11384.2180] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[11384.2180] [0xc1420117] RestoreMountDirectory:(422)
+[11384.2180] [0xc1420117] WIMUnmountImageHandle:(1678)
+[11384.2180] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-05 00:12:16, Error                 DISM   DISM WIM Provider: PID=11384 TID=2180 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-05 00:12:16, Error                 DISM   API: PID=11384 TID=2180 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-05 00:12:16, Error                 DISM   API: PID=11384 TID=2180 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-05 00:12:16, Error                 DISM   API: PID=11384 TID=17800 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[15260.68] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [2d0d92ce-a7e2-4a4c-bacc-e0d09aed670e]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[3600.5348] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[3600.5348] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[7552.1128] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [d2a20e1a-e263-4ab6-a8f4-24efae0d3266]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[17600.13316] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17600.13316] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[16712.19412] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [c19f528b-946f-46e3-9dc4-3635a8fe79ec]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[18976.8248] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18976.8248] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[13104.12976] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [76adf718-46c2-43b7-9da3-b1eab75aa91b]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[13104.12976] Wimserv process started for mount guid 76adf718-46c2-43b7-9da3-b1eab75aa91b; PID is 14952
+[14952.9368] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[14952.9368] Mount complete.
+[14952.9368] Received unmount request.
+[14952.9368] Unmount complete.
+[14952.18088] Wimserv exiting per terminate event.
+[14952.18088] Wimserv stopped.
+[7616.11056] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [2d3b8fda-893f-4779-8af7-81a02b4a5484]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+2024-02-05 01:20:48, Error                 DISM   API: PID=7616 TID=9200 Open session handles, hr=c0040003 - DismShutdownInternal
+[18224.17552] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18224.17552] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[18224.18068] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.18068] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.18068] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[18224.18068] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.18068] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.18068] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:21:08, Error                 DISM   API: PID=18224 TID=18068 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:21:08, Error                 DISM   API: PID=18224 TID=18068 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:21:08, Error                 DISM   API: PID=18224 TID=5324 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[18224.1192] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.1192] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.1192] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[18224.1192] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.1192] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.1192] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:21:10, Error                 DISM   API: PID=18224 TID=1192 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:21:10, Error                 DISM   API: PID=18224 TID=1192 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:21:10, Error                 DISM   API: PID=18224 TID=17600 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[18224.13580] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.13580] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.13580] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[18224.13580] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.13580] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.13580] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:21:11, Error                 DISM   API: PID=18224 TID=13580 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:21:11, Error                 DISM   API: PID=18224 TID=13580 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:21:11, Error                 DISM   API: PID=18224 TID=17600 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[18224.2920] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.2920] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.2920] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[18224.2920] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[18224.2920] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[18224.2920] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:21:13, Error                 DISM   API: PID=18224 TID=2920 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:21:13, Error                 DISM   API: PID=18224 TID=2920 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:21:13, Error                 DISM   API: PID=18224 TID=17600 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[12496.15772] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [5ed799d9-65e1-4b2e-90dd-77e258ae7a25]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[17020.11588] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17020.11588] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[17020.3248] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [de296261-cfce-474c-baca-38c121aa306c]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[9356.6228] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[9356.6228] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[9356.7652] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.7652] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.7652] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[9356.7652] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.7652] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.7652] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:37:50, Error                 DISM   API: PID=9356 TID=7652 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:37:50, Error                 DISM   API: PID=9356 TID=7652 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:37:50, Error                 DISM   API: PID=9356 TID=18528 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[9356.7744] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.7744] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.7744] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[9356.7744] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.7744] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.7744] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:37:56, Error                 DISM   API: PID=9356 TID=7744 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:37:56, Error                 DISM   API: PID=9356 TID=7744 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:37:56, Error                 DISM   API: PID=9356 TID=18528 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[9356.13464] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.13464] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.13464] [0xc142011c] WIMGetMountedImageHandle:(2910)
+[9356.13464] [0x80070002] FIOReadFileIntoBuffer:(1456): Sistem belirtilen dosyayı bulamıyor.
+[9356.13464] [0xc142011c] UnmarshallImageHandleFromDirectory:(641)
+[9356.13464] [0xc142011c] WIMGetMountedImageHandle:(2910)
+2024-02-05 01:37:59, Error                 DISM   API: PID=9356 TID=13464 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc0040007)
+2024-02-05 01:37:59, Error                 DISM   API: PID=9356 TID=13464 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc0040007)
+2024-02-05 01:37:59, Error                 DISM   API: PID=9356 TID=18528 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc0040007)
+[2840.1284] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [50ec0aaa-00bf-4ce2-a3dc-59b2d0753096]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[19320.18960] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[19320.18960] [0x80070002] UtilGetMountingEvent:(561): Sistem belirtilen dosyayı bulamıyor.
+[3428.18952] [0xc144012e] 
+2024-02-05 17:10:14, Error                 DISM   DISM WIM Provider: PID=3428 [WIMCloseWIM:(2775) -> Fail to flush file buffers] C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Extracted\sources\install.wim (HRESULT=0x80070006) - CWimManager::WimProviderMsgLogCallback
+2024-02-05 17:10:14, Error                 DISM   DISM WIM Provider: PID=3428 TID=18952 "WIM open failed with access denied." - CWimImageInfo::Mount(hr:0xc1510111)
+2024-02-05 17:10:14, Error                 DISM   API: PID=3428 TID=18952 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1510111)
+2024-02-05 17:10:14, Error                 DISM   API: PID=3428 TID=18952 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1510111)
+2024-02-05 17:10:14, Error                 DISM   API: PID=3428 TID=6596 CMountCommandObject failed - MountImageInternal(hr:0xc1510111)
+2024-02-05 17:10:14, Error                 DISM   API: PID=3428 TID=6596 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1510111)
+[16452.12704] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [016ef5f1-3caa-4961-adb6-f979ed96e98b]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[16452.12704] Wimserv process started for mount guid 016ef5f1-3caa-4961-adb6-f979ed96e98b; PID is 12732
+[12732.7308] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[12732.7308] Mount complete.
+[16452.8968] [0xc1420127] WIMMountImageHandle:(1132)
+[16452.8968] [0x80070002] StateStoreRemoveMountedImage:(1124): Sistem belirtilen dosyayı bulamıyor.
+[16452.8968] [0x80070002] WIMMountImageHandle:(1344): Sistem belirtilen dosyayı bulamıyor.
+2024-02-05 17:55:55, Error                 DISM   DISM WIM Provider: PID=16452 TID=8968 "Failed to mount the image." - CWimImageInfo::Mount(hr:0xc1420127)
+2024-02-05 17:55:56, Error                 DISM   API: PID=16452 TID=8968 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:210 - CMountCommandObject::InternalExecute(hr:0xc1420127)
+2024-02-05 17:55:56, Error                 DISM   API: PID=16452 TID=8968 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420127)
+2024-02-05 17:55:56, Error                 DISM   API: PID=16452 TID=16516 CMountCommandObject failed - MountImageInternal(hr:0xc1420127)
+2024-02-05 17:55:56, Error                 DISM   API: PID=16452 TID=16516 onecore\base\ntsetup\opktools\dism\api\lib\dismgeneralapisinternal.cpp:627 - MountImageInternal(hr:0xc1420127)
+[12732.10948] Received unmount request.
+[12732.10948] Unmount complete.
+[12732.5724] Wimserv exiting per terminate event.
+[12732.5724] Wimserv stopped.
+[9708.18312] Mounting new image.
+Wim:         [E:\ISO\Extracted\sources\install.wim]
+Image Index: [1]
+Mount Guid:  [f234a43d-2b7d-454a-b617-b2e234f9c7c1]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[9708.18312] Wimserv process started for mount guid f234a43d-2b7d-454a-b617-b2e234f9c7c1; PID is 7932
+[7932.10260] Registered log file(s) for mount of wim at E:\ISO\Extracted\sources\install.wim.
+[7932.10260] Mount complete.
+[15028.6504] [0x800706ba] RpcCommIsImageMounted:(569): RPC sunucusu kullanılamıyor.
+[14676.7288] [0x800706ba] RpcCommIsImageMounted:(569): RPC sunucusu kullanılamıyor.
+[14676.2980] [0x800706ba] RpcCommIsImageMounted:(569): RPC sunucusu kullanılamıyor.
