@@ -15,7 +15,7 @@
     d:DesignWidth="1000"
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
-    WindowCornerPreference="Round"
+    WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <ui:FluentWindow.InputBindings>
@@ -46,7 +46,6 @@
             IsBackButtonVisible="Visible"
             IsPaneToggleVisible="True"
             MenuItemsSource="{Binding ViewModel.MenuItems, Mode=OneWay}"
-            OpenPaneLength="240"
             PaneDisplayMode="Left"
             TitleBar="{Binding ElementName=TitleBar, Mode=OneWay}">
             <ui:NavigationView.Header>

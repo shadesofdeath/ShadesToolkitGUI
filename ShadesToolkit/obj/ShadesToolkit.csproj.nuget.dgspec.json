@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[8.2.2, )"
             },
+            "ManagedWimLib": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
             "Microsoft.Dism": {
               "target": "Package",
               "version": "[3.0.0, )"

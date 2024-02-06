@@ -14,6 +14,67 @@
           }
         }
       },
+      "Joveler.DynLoader/2.3.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/Joveler.DynLoader.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
+        }
+      },
+      "ManagedWimLib/2.5.3": {
+        "dependencies": {
+          "Joveler.DynLoader": "2.3.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ManagedWimLib.dll": {
+            "assemblyVersion": "2.5.3.0",
+            "fileVersion": "2.5.3.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libwim.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libwim.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libwim.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libwim.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libwim.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/libwim-15.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libwim-15.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libwim-15.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Microsoft.Dism/3.0.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0"
@@ -533,6 +594,20 @@
       "sha512": "sha512-r0g0k9tGYdrnz8R7T3x5UiokDffeevzK/2P/9SBL6fqLgN8B157MIi/bVUWI1KAz6ZorZrK9AdABCWUeXZZsvA==",
       "path": "communitytoolkit.mvvm/8.2.2",
       "hashPath": "communitytoolkit.mvvm.8.2.2.nupkg.sha512"
+    },
+    "Joveler.DynLoader/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B/MvOvjx+gt/ReMxYTEguJJtPXxDqyQwxR9laNDhORb3RDy6t7sALLD8kPW5qEJDqS8Q1MZzAif1vVmFYJcIWA==",
+      "path": "joveler.dynloader/2.3.0",
+      "hashPath": "joveler.dynloader.2.3.0.nupkg.sha512"
+    },
+    "ManagedWimLib/2.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LvvgP9BpbG86Ze2yGDHt9UDXSmx1+O98RNomkujzzv/XQoLCjD/ZjHQhBHS8W85YNBb+HCpb4RUhau0cih8uAw==",
+      "path": "managedwimlib/2.5.3",
+      "hashPath": "managedwimlib.2.5.3.nupkg.sha512"
     },
     "Microsoft.Dism/3.0.0": {
       "type": "package",

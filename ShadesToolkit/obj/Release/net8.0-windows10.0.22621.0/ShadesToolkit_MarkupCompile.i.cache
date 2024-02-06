@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\App.xaml
-4422644930
+51507602508
 11562050264
-19731525609
-231-1135620448
-Views\Pages\DataPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Windows\MainWindow.xaml;
+20-1184829906
+233669086614
+Views\Pages\DataPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
 
-False
+True
 

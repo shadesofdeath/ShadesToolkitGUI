@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0">
-            <ui:Button x:Name="add_btn" BorderThickness="0.6" MinWidth="60" CornerRadius="8" Click="Add_Btn_Click">
+            <ui:Button x:Name="add_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Click="Add_Btn_Click" >
                 <ui:Button.ContextMenu>
                     <ContextMenu x:Name="contextMenu" Placement="MousePoint" StaysOpen="False">
                         <MenuItem Header="Select WIM" Click="AddWim_ClickAsync"/>
@@ -32,6 +32,12 @@
                 </StackPanel>
             </ui:Button>
 
+            <ui:Button x:Name="convert_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="convert_btn_Click"> 
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="ArrowSync20" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="Convert" Margin="0,12,0,0"/>
+                </StackPanel>
+            </ui:Button>
         </WrapPanel>
         <StackPanel x:Name="CleanupMountsPanel" Visibility="Hidden" Grid.Row="1" Margin="0,80,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <ui:ProgressRing x:Name="DataProgress"  IsIndeterminate="True" Width="42" Height="42"/>
@@ -44,20 +50,32 @@
 
         <ui:DataGrid Grid.Row="1" x:Name="sourceDataGrid" AutoGenerateColumns="False"  IsReadOnly="True" ContextMenuOpening="sourceDataGrid_ContextMenuOpening">
 
-
             <ui:DataGrid.ContextMenu>
                 <ContextMenu x:Name="contextMenuControl">
-                    <MenuItem Header="Mount" Click="Mount_ClickAsync"/>
-                    <MenuItem Header="Unmount" Click="Unmount_ClickAsync"/>
-                    <MenuItem Header="Forget" Click="Forget_ClickAsync" />
+                    <MenuItem Header="Mount" Click="Mount_ClickAsync">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="ArrowCurveUpRight20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Unmount" Click="Unmount_ClickAsync">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="ArrowCurveDownLeft20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Forget" Click="Forget_ClickAsync">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="Delete20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
+
             </ui:DataGrid.ContextMenu>
             <ui:DataGrid.Columns>
                 <DataGridTextColumn Width="Auto" Header="Operating System" Binding="{Binding OS}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,20,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -65,7 +83,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -73,7 +91,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -81,7 +99,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -89,7 +107,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -110,7 +128,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -118,7 +136,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,4,0"/>
+                            <Setter Property="Margin" Value="4,0,8,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
