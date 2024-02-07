@@ -8,8 +8,8 @@
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="WimToEsd"
     MaxWidth="550"
-    MaxHeight="360"
-    MinHeight="360"
+    MaxHeight="385"
+    MinHeight="385"
     MinWidth="550"
     ResizeMode="NoResize"
     WindowStyle="None"
@@ -24,7 +24,7 @@
             <ui:SymbolIcon Symbol="ArrowRepeatAll24" Margin="0,20,0,0" FontSize="50" Opacity="0.8"/>
             <WrapPanel Margin="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <ui:TextBox PlaceholderText="If you select esd, convert esd to wim file if you select wim" VerticalAlignment="Center" HorizontalAlignment="Center"  x:Name="filePathTextBox" MinWidth="400" MaxWidth="400" Margin="10,12,0,0" BorderThickness="0"/>
-                <ui:Button VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="selectButton" Content="Select" Width="80" Margin="10,12,0,0" BorderThickness="0"/>
+                <ui:Button VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="selectButton" Content="Select" Width="80" Margin="10,12,0,0" BorderThickness="0" Height="33"/>
             </WrapPanel>
             <Label Margin="0,20,0,4" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Select compression type"/>
             <ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" x:Name="comboBox" Width="120" >
@@ -33,7 +33,10 @@
                 <ComboBoxItem Content="LZMS"/>
             </ComboBox>
             <ui:Button VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="saveButton" Content="Save" Width="120" Margin="0,20,0,0"/>
-            <ProgressBar x:Name="progress" Visibility="Hidden" Margin="0,15,0,0" IsIndeterminate="True" Height="4" Width="150"/>
+            <WrapPanel Margin="0,15,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ProgressBar x:Name="progress" Visibility="Hidden"  IsIndeterminate="False" Height="4" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label x:Name="progressPercentageLabel" Content="" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,0,0"/>
+            </WrapPanel>
             <Label x:Name="progressLabel" Content="" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0"/>
         </StackPanel>
     </Grid>

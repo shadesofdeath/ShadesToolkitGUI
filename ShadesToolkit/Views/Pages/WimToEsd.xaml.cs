@@ -82,11 +82,13 @@ namespace ShadesToolkit.Views.Pages
                 {
                     convertedFilePath = saveFileDialog.FileName;
                     progressLabel.Visibility = Visibility.Visible;
+                    progressPercentageLabel.Visibility = Visibility.Visible; // Yeni eklenen satır
                     progress.Visibility = Visibility.Visible;
                     progressLabel.Content = "Conversion in progress..";
                     worker.RunWorkerAsync();
                 }
             };
+
 
         }
 
@@ -98,15 +100,40 @@ namespace ShadesToolkit.Views.Pages
             {
                 using (Wim destWim = Wim.CreateNewWim(GetCompressionType()))
                 {
+                    ProgressCallback progressCallback = new ProgressCallback(ProgressFunc);
+                    destWim.RegisterCallback(progressCallback);
                     srcWim.ExportImage(1, destWim, "ImageName", null, ExportFlags.Gift);
                     destWim.Write(convertedFilePath, Wim.AllImages, WriteFlags.None, Wim.DefaultThreads);
                 }
             }
             Wim.GlobalCleanup();
-            Dispatcher.Invoke(() => progressLabel.Content = "Dönüştürme işlemi başarıya tamamlandı!");
-            Dispatcher.Invoke(() => progress.Visibility = Visibility.Hidden);
             Dispatcher.Invoke(() => progress.IsIndeterminate = false);
+            progressLabel.Content = "Conversion completed.";
         }
+
+        private CallbackStatus ProgressFunc(ProgressMsg msgType, object info, object progctx)
+        {
+            if (msgType == ProgressMsg.WriteStreams)
+            {
+                var progressInfo = (WriteStreamsProgress)info;
+                double progressPercentage = 100.0 * progressInfo.CompletedBytes / progressInfo.TotalBytes;
+
+                Dispatcher.Invoke(() =>
+                {
+                    progress.Value = progressPercentage;
+                    progressPercentageLabel.Content = $"%{progressPercentage:0.00}";
+
+                    // Dönüşümün tamamlandığını kontrol et
+                    if (progressPercentage >= 100.0)
+                    {
+                        progressLabel.Content = "Conversion completed.";
+                    }
+                });
+            }
+
+            return CallbackStatus.Continue;
+        }
+
 
         private CompressionType GetCompressionType()
         {
