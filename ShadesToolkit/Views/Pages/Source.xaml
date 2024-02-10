@@ -38,6 +38,13 @@
                     <ui:TextBlock Text="Convert" Margin="0,12,0,0"/>
                 </StackPanel>
             </ui:Button>
+
+            <ui:Button x:Name="host_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="host_btn_Click">
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="Book24" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="Hosts Editor" Margin="0,12,0,0"/>
+                </StackPanel>
+            </ui:Button>
         </WrapPanel>
         <StackPanel x:Name="CleanupMountsPanel" Visibility="Hidden" Grid.Row="1" Margin="0,80,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <ui:ProgressRing x:Name="DataProgress"  IsIndeterminate="True" Width="42" Height="42"/>
@@ -67,11 +74,21 @@
                             <ui:SymbolIcon Symbol="Delete20"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Open file directory" Click="OpenFileDirectory_ClickAsync">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="FolderOpen24"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Open mount directory" Click="OpenMountDirectory_Click">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="ArrowJoin20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
 
             </ui:DataGrid.ContextMenu>
             <ui:DataGrid.Columns>
-                <DataGridTextColumn Width="Auto" Header="Operating System" Binding="{Binding OS}">
+                <DataGridTextColumn MinWidth="200" Header="Operating System" Binding="{Binding OS}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -79,7 +96,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Width="Auto" Header="Architecture" Binding="{Binding Architecture}">
+                <DataGridTextColumn MinWidth="90" Header="Architecture" Binding="{Binding Architecture}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -87,7 +104,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Width="Auto" Header="Flags" Binding="{Binding Flags}">
+                <DataGridTextColumn MinWidth="120" Header="Flags" Binding="{Binding Flags}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -111,20 +128,20 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTemplateColumn Width="Auto" Header="Status">
+                <DataGridTemplateColumn MinWidth="200" Header="Status">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Margin="8,0,8,0">
                                 <TextBlock Text="{Binding Status}" VerticalAlignment="Center"/>
                                 <ui:SymbolIcon Foreground="Red" Margin="0,0,8,0" Symbol="Dismiss32" Visibility="{Binding IsInvalidStatus}"/>
-                                <ui:SymbolIcon Foreground="LawnGreen" Symbol="Checkmark32" Margin="8,0,8,0" Visibility="{Binding IsMountedStatus}"/>
+                                <ui:SymbolIcon Foreground="#03C988" Symbol="Checkmark32" Margin="8,0,8,0" Visibility="{Binding IsMountedStatus}"/>
                                 <ui:ProgressRing x:Name="progressRing"  Progress="{Binding Progress}" Width="16" Height="16" Margin="8,0,0,0" Visibility="{Binding ProgressRingVisibility}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Width="Auto" Header="Language" Binding="{Binding Language}">
+                <DataGridTextColumn MinWidth="120" Header="Language" Binding="{Binding Language}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center"/>

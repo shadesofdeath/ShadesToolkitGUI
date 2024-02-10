@@ -39,27 +39,17 @@
 
         <ui:NavigationView
             x:Name="NavigationView"
-            Padding="42,0,42,0"
-            BreadcrumbBar="{Binding ElementName=BreadcrumbBar}"
+            Padding="20,0,20,0"
+            Margin="12,50,12,0"
+            
             FooterMenuItemsSource="{Binding ViewModel.FooterMenuItems, Mode=OneWay}"
             FrameMargin="0"
-            IsBackButtonVisible="Visible"
-            IsPaneToggleVisible="True"
+            IsBackButtonVisible="Collapsed"
             MenuItemsSource="{Binding ViewModel.MenuItems, Mode=OneWay}"
-            PaneDisplayMode="Left"
-            TitleBar="{Binding ElementName=TitleBar, Mode=OneWay}">
+            PaneDisplayMode="Top">
             <ui:NavigationView.Header>
                 <ui:BreadcrumbBar x:Name="BreadcrumbBar" Margin="42,32,42,20" />
             </ui:NavigationView.Header>
-            <ui:NavigationView.AutoSuggestBox>
-                <ui:AutoSuggestBox x:Name="AutoSuggestBox" PlaceholderText="Search">
-                    <ui:AutoSuggestBox.Icon>
-                        <ui:IconSourceElement>
-                            <ui:SymbolIconSource Symbol="Search24" />
-                        </ui:IconSourceElement>
-                    </ui:AutoSuggestBox.Icon>
-                </ui:AutoSuggestBox>
-            </ui:NavigationView.AutoSuggestBox>
             <ui:NavigationView.ContentOverlay>
                 <Grid>
                     <ui:SnackbarPresenter x:Name="SnackbarPresenter" />

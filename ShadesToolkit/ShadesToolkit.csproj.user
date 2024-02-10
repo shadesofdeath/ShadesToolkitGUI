@@ -7,6 +7,14 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Pages\Hosts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\Hosts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\Source.xaml">
       <SubType>Designer</SubType>
     </Page>

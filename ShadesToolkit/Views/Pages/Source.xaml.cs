@@ -1,7 +1,6 @@
 ﻿using Microsoft.Dism;
 using Newtonsoft.Json;
 using ShadesToolkit.ViewModels.Pages;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -44,12 +43,22 @@ namespace ShadesToolkit.Views.Pages
 
         private void InitializeDismApi()
         {
-            DismApi.Initialize(DismLogLevel.LogErrors, "ShadesToolkit.txt");
+            try
+            {
+                DismApi.Initialize(DismLogLevel.LogErrors, "ShadesToolkit.txt");
+            }
+            catch { }
+            
         }
 
         private void ShutdownDismApi()
         {
-            DismApi.Shutdown();
+            try
+            {
+                DismApi.Shutdown();
+            }
+            catch { }
+            
         }
 
         private async Task<string> GetMountStatusAsync(string filename, int imageIndex)
@@ -172,6 +181,12 @@ namespace ShadesToolkit.Views.Pages
 
         private async Task AddWimFileToDataGridAsync(string filename)
         {
+            string mountPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Mount");
+
+            if (!Directory.Exists(mountPath))
+            {
+                Directory.CreateDirectory(mountPath);
+            }
             InitializeDismApi();
             if (File.Exists(filename))
             {
@@ -217,34 +232,24 @@ namespace ShadesToolkit.Views.Pages
             contextMenu.PlacementTarget = sender as Wpf.Ui.Controls.Button;
             contextMenu.IsOpen = true;
         }
-        private async void MountUnmount_ClickAsync(object sender, RoutedEventArgs e, bool isMount)
+        private async Task MountUnmountAsync(bool isMount)
         {
             if (sourceDataGrid.SelectedItem is not null)
             {
                 var selectedItem = (WimFile)sourceDataGrid.SelectedItem;
                 string filename = selectedItem.Filename;
 
-                // Dosyanın mevcut durumunu kontrol edin
                 string currentStatus = await GetMountStatusAsync(filename, selectedItem.Index);
 
-                // Eğer kullanıcı mount etmeye çalışıyorsa ve dosya zaten mount edilmişse
                 if (isMount && currentStatus == "Mounted")
                 {
-                    Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
-                    messageBox.Title = "Warning";
-                    messageBox.Content = "It's already mounted.";
-                    await messageBox.ShowDialogAsync();
+                    System.Windows.MessageBox.Show("It's already mounted.", "Warning");
                     return;
                 }
 
-                // Eğer kullanıcı unmount etmeye çalışıyorsa ve dosya zaten unmount edilmişse
-                if (!isMount && currentStatus == "Unmounted")
+                if (!isMount && currentStatus == "Not Mounted")
                 {
-                    Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
-                    messageBox.Title = "Warning";
-                    messageBox.Content = "It's already unmounted.";
-                    await messageBox.ShowDialogAsync();
-                    return;
+                    System.Windows.MessageBox.Show("It's already unmounted.", "Warning");
                     return;
                 }
 
@@ -267,10 +272,7 @@ namespace ShadesToolkit.Views.Pages
 
                     if (processOutput.Contains("Method = LZMS"))
                     {
-                        Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
-                        messageBox.Title = "Warning";
-                        messageBox.Content = "This file cannot be mounted because it is compressed with the LZMS algorithm.";
-                        await messageBox.ShowDialogAsync();
+                        System.Windows.MessageBox.Show("This file cannot be mounted because it is compressed with the LZMS algorithm.", "Warning");
                         return;
                     }
                 }
@@ -284,53 +286,51 @@ namespace ShadesToolkit.Views.Pages
                 InitializeDismApi();
                 convert_btn.IsEnabled = false;
                 add_btn.IsEnabled = false;
-                var worker = new BackgroundWorker();
-                worker.WorkerReportsProgress = true;
-                worker.DoWork += (s, args) =>
-                {
-                    DismProgressCallback progressCallback = new DismProgressCallback((DismProgress progress) =>
-                    {
-                        worker.ReportProgress(isMount ? progress.Current : 100 - progress.Current);
-                    });
 
-                    selectedItem.IsMounting = true;
-                    if (isMount)
-                    {
-                        DismApi.MountImage(filename, mountPath, selectedItem.Index, false, DismMountImageOptions.None, progressCallback);
-                    }
-                    else
-                    {
-                        DismApi.UnmountImage(mountPath, false, progressCallback);
-                    }
-                };
-                worker.ProgressChanged += (s, args) =>
+                DismProgressCallback progressCallback = new DismProgressCallback((DismProgress progress) =>
                 {
                     this.Dispatcher.Invoke(() =>
                     {
-                        selectedItem.Status = $"{(isMount ? "Mounting" : "Unmounting")}... {args.ProgressPercentage}%";
-                        selectedItem.Progress = args.ProgressPercentage;
+                        int adjustedProgress = progress.Current % 100;
+                        selectedItem.Status = $"{(isMount ? "Mounting" : "Unmounting")}... {adjustedProgress}%";
+                        selectedItem.Progress = adjustedProgress;
                         sourceDataGrid.Items.Refresh();
                     });
-                };
-                worker.RunWorkerCompleted += async (s, args) =>
+                });
+
+                selectedItem.IsMounting = true;
+                if (isMount)
                 {
-                    ShutdownDismApi();
-                    selectedItem.IsMounting = false;
-                    selectedItem.Status = await GetMountStatusAsync(selectedItem.Filename, selectedItem.Index);
-                    sourceDataGrid.Items.Refresh();
-                    contextMenuControl.Visibility = Visibility.Visible;
-                    contextMenuControl.IsEnabled = true;
-                    add_btn.IsEnabled = true;
-                    convert_btn.IsEnabled = true;
-                };
-                worker.RunWorkerAsync();
+                    await Task.Run(() => DismApi.MountImage(filename, mountPath, selectedItem.Index, false, DismMountImageOptions.None, progressCallback));
+                }
+                else
+                {
+                    System.Windows.MessageBoxResult result = System.Windows.MessageBox.Show("Should changes to the image be saved ?", "Warning", System.Windows.MessageBoxButton.YesNo);
+
+                    if (result == System.Windows.MessageBoxResult.Yes)
+                    {
+                        await Task.Run(() => DismApi.UnmountImage(mountPath, true, progressCallback));
+                    }
+                    else if (result == System.Windows.MessageBoxResult.No)
+                    {
+                        await Task.Run(() => DismApi.UnmountImage(mountPath, false, progressCallback));
+                    }
+                }
+
+                ShutdownDismApi();
+                selectedItem.IsMounting = false;
+                selectedItem.Status = await GetMountStatusAsync(selectedItem.Filename, selectedItem.Index);
+                sourceDataGrid.Items.Refresh();
+                contextMenuControl.Visibility = Visibility.Visible;
+                contextMenuControl.IsEnabled = true;
+                add_btn.IsEnabled = true;
+                convert_btn.IsEnabled = true;
             }
         }
 
+        private async void Mount_ClickAsync(object sender, RoutedEventArgs e) => await MountUnmountAsync(true);
 
-        private async void Mount_ClickAsync(object sender, RoutedEventArgs e) => MountUnmount_ClickAsync(sender, e, true);
-
-        private async void Unmount_ClickAsync(object sender, RoutedEventArgs e) => MountUnmount_ClickAsync(sender, e, false);
+        private async void Unmount_ClickAsync(object sender, RoutedEventArgs e) => await MountUnmountAsync(false);
 
         private void sourceDataGrid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
@@ -466,5 +466,38 @@ namespace ShadesToolkit.Views.Pages
             WimToEsd wimConverter = new WimToEsd();
             wimConverter.Show();
         }
+        private void host_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Hosts hostsPage = new Hosts();
+            hostsPage.Show();
+        }
+
+        private void OpenFileDirectory_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            if (sourceDataGrid.SelectedItem is not null)
+            {
+                var selectedItem = (WimFile)sourceDataGrid.SelectedItem;
+                string filePath = selectedItem.Filename;
+                string directoryPath = Path.GetDirectoryName(filePath);
+                Process.Start("explorer.exe", directoryPath);
+            }
+        }
+
+        private void OpenMountDirectory_Click(object sender, RoutedEventArgs e)
+        {
+            var mountPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Mount");
+            if (Directory.Exists(mountPath))
+            {
+                Process.Start(new ProcessStartInfo("explorer.exe", mountPath));
+            }
+            else
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Warning";
+                messageBox.Content = "No mount directory found.";
+                messageBox.ShowDialogAsync();
+            }
+        }
+
     }
 }
