@@ -10,9 +10,27 @@
     <Compile Update="Views\Pages\Hosts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\ImageInfo\ImageName.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\IsoCreator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Pages\Hosts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ImageInfo\ImageFlags.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ImageInfo\ImageDescription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ImageInfo\ImageName.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\IsoCreator.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Source.xaml">

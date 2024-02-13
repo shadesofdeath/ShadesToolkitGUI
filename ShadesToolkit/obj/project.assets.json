@@ -73,7 +73,7 @@
           }
         }
       },
-      "Microsoft.Dism/3.0.0": {
+      "Microsoft.Dism/3.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0"
@@ -678,6 +678,19 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Wim/1.2.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Wim.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Wim.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Win32.Registry/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -843,7 +856,7 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "WPF-UI/3.0.0-preview.13": {
+      "WPF-UI/3.0.0": {
         "type": "package",
         "compile": {
           "lib/net8.0-windows7.0/Wpf.Ui.dll": {
@@ -934,10 +947,10 @@
         "runtimes/win-x86/native/libwim-15.dll"
       ]
     },
-    "Microsoft.Dism/3.0.0": {
-      "sha512": "m7ffDVPj5AATePY427STNm7cKtAbGuNW88p+qPdqNSs8PEbeJuy8SDc0zDLHZo8E1cpQHfHgZn8z+tU+sWkJQw==",
+    "Microsoft.Dism/3.1.0": {
+      "sha512": "pyXPufLdTakuVa9TWkF+Os/sp9OMFpe1Qjsoux8Rp/hUmBnK7JkmUK7kZ7JgWHHFAf5r6pwboLJmXU/h0ErtJw==",
       "type": "package",
-      "path": "microsoft.dism/3.0.0",
+      "path": "microsoft.dism/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -947,7 +960,7 @@
         "lib/netstandard2.0/Microsoft.Dism.dll",
         "lib/netstandard2.0/Microsoft.Dism.pdb",
         "lib/netstandard2.0/Microsoft.Dism.xml",
-        "microsoft.dism.3.0.0.nupkg.sha512",
+        "microsoft.dism.3.1.0.nupkg.sha512",
         "microsoft.dism.nuspec"
       ]
     },
@@ -1859,6 +1872,21 @@
         "version.txt"
       ]
     },
+    "Microsoft.Wim/1.2.11": {
+      "sha512": "5XzllBgbKnQGqCcOnHr8DdsJjWxCEtyga/MPXcLCeue5T2adZywHdKtfQt7+XO6q15lu/RR1TtDGt9IuT1W1hQ==",
+      "type": "package",
+      "path": "microsoft.wim/1.2.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Wim.dll",
+        "lib/net40/Microsoft.Wim.xml",
+        "lib/netstandard2.0/Microsoft.Wim.dll",
+        "lib/netstandard2.0/Microsoft.Wim.xml",
+        "microsoft.wim.1.2.11.nupkg.sha512",
+        "microsoft.wim.nuspec"
+      ]
+    },
     "Microsoft.Win32.Registry/5.0.0": {
       "sha512": "dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
       "type": "package",
@@ -2211,10 +2239,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "WPF-UI/3.0.0-preview.13": {
-      "sha512": "57Exnba6ySbx7pe8czXpgYs5pinq9sCI5TBKsX4qo03K7a0frj0KT5vUkYWjd4xWjfThAqZxLZE4YTA5vNJoUg==",
+    "WPF-UI/3.0.0": {
+      "sha512": "YM4GtOJVRp90x6i4C8PhQc6Ic8zQz/1tt+Wrh5qNBm87jLBq/1LAB812sAlZtiVz5gLN74ERdihKI+/azElPqw==",
       "type": "package",
-      "path": "wpf-ui/3.0.0-preview.13",
+      "path": "wpf-ui/3.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2233,7 +2261,7 @@
         "lib/net8.0-windows7.0/Wpf.Ui.dll",
         "lib/net8.0-windows7.0/Wpf.Ui.xml",
         "tools/VisualStudioToolsManifest.xml",
-        "wpf-ui.3.0.0-preview.13.nupkg.sha512",
+        "wpf-ui.3.0.0.nupkg.sha512",
         "wpf-ui.nuspec",
         "wpfui.png"
       ]
@@ -2243,10 +2271,11 @@
     "net8.0-windows10.0.22621": [
       "CommunityToolkit.Mvvm >= 8.2.2",
       "ManagedWimLib >= 2.5.3",
-      "Microsoft.Dism >= 3.0.0",
+      "Microsoft.Dism >= 3.1.0",
       "Microsoft.Extensions.Hosting >= 8.0.0",
+      "Microsoft.Wim >= 1.2.11",
       "Newtonsoft.Json >= 13.0.3",
-      "WPF-UI >= 3.0.0-preview.13"
+      "WPF-UI >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -2304,11 +2333,15 @@
           },
           "Microsoft.Dism": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.1.0, )"
           },
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "Microsoft.Wim": {
+            "target": "Package",
+            "version": "[1.2.11, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -2316,7 +2349,7 @@
           },
           "WPF-UI": {
             "target": "Package",
-            "version": "[3.0.0-preview.13, )"
+            "version": "[3.0.0, )"
           }
         },
         "imports": [
@@ -2343,7 +2376,7 @@
           "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           },
-          "Microsoft.WindowsDesktop.App.WPF": {
+          "Microsoft.WindowsDesktop.App": {
             "privateAssets": "none"
           }
         },

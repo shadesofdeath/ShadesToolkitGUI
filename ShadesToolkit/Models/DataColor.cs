@@ -9,6 +9,6 @@ namespace ShadesToolkit.Models
 {
     public struct DataColor
     {
-        public Brush Color { get; set; }
+        public System.Drawing.Brush Color { get; set; }
     }
 }

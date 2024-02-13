@@ -1,9 +1,11 @@
 ﻿using Microsoft.Dism;
 using Newtonsoft.Json;
 using ShadesToolkit.ViewModels.Pages;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using ShadesToolkit.Views.Pages.ImageInfo;
 using System.Reflection;
 using System.Windows.Controls;
 using Wpf.Ui.Controls;
@@ -15,6 +17,7 @@ namespace ShadesToolkit.Views.Pages
         public bool IsMounting { get; set; }
         public string Filename { get; set; }
         public string OS { get; set; }
+        public string Description { get; set; }
         public string Architecture { get; set; }
         public string Flags { get; set; }
         public int Index { get; set; }
@@ -39,8 +42,16 @@ namespace ShadesToolkit.Views.Pages
             DataContext = this;
             InitializeComponent();
             LoadWimFilesAsync();
-        }
+            ImageName.RefreshDataGridEvent += RefreshDataGrid;
+            ImageDescription.RefreshDataGridEvent += RefreshDataGrid;
+            ImageFlags.RefreshDataGridEvent += RefreshDataGrid;
 
+        }
+        private void RefreshDataGrid()
+        {
+            sourceDataGrid.Items.Clear();
+            LoadWimFilesAsync();
+        }
         private void InitializeDismApi()
         {
             try
@@ -117,7 +128,7 @@ namespace ShadesToolkit.Views.Pages
             }
         }
 
-        private async void LoadWimFilesAsync()
+        public async void LoadWimFilesAsync()
         {
             if (File.Exists("wimFiles.json"))
             {
@@ -140,6 +151,14 @@ namespace ShadesToolkit.Views.Pages
 
         private async void AddWim_ClickAsync(object sender, RoutedEventArgs e)
         {
+            if (sourceDataGrid.Items.Count > 0)
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Warning";
+                messageBox.Content = "Already showing a wim information";
+                await messageBox.ShowDialogAsync();
+                return;
+            }
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".wim";
             dlg.Title = "Select Install.wim file!";
@@ -204,7 +223,8 @@ namespace ShadesToolkit.Views.Pages
                         WimFile item = new WimFile
                         {
                             Filename = filename,
-                            OS = imageInfo.ImageDescription,
+                            OS = imageInfo.ImageName,
+                            Description = imageInfo.ImageDescription,
                             Architecture = imageInfo.Architecture.ToString() == "AMD64" ? "x64" : imageInfo.Architecture.ToString(),
                             Flags = imageInfo.EditionId.ToString() == "Core" ? "Home" : imageInfo.EditionId.ToString(),
                             Index = imageInfo.ImageIndex,
@@ -461,6 +481,11 @@ namespace ShadesToolkit.Views.Pages
             sourceDataGrid.Items.Refresh();
         }
 
+        private void Iso_Creator_Click(object sender, RoutedEventArgs e)
+        {
+            IsoCreator IsoCreator = new IsoCreator();
+            IsoCreator.Show();
+        } 
         private void convert_btn_Click(object sender, RoutedEventArgs e)
         {
             WimToEsd wimConverter = new WimToEsd();
@@ -499,5 +524,33 @@ namespace ShadesToolkit.Views.Pages
             }
         }
 
+        private void CreateISO_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (WimFile)sourceDataGrid.SelectedItem;
+            string filePath = selectedItem.Filename;
+            DirectoryInfo directoryInfo = Directory.GetParent(filePath);
+            string parentDirectoryPath = directoryInfo?.Parent?.FullName;
+            IsoCreator isoCreator = new IsoCreator();
+            isoCreator.FolderDirectory.Text = parentDirectoryPath;
+            isoCreator.SelectSaveDirectory.RaiseEvent(new RoutedEventArgs(Wpf.Ui.Controls.Button.ClickEvent));
+            isoCreator.Show();
+        }
+
+        private void ImageName_Click(object sender, RoutedEventArgs e)
+        {
+            ImageName ImageName = new ImageName();
+            ImageName.Show();
+        }
+
+        private void ImageDescription_Click(object sender, RoutedEventArgs e)
+        {
+            ImageDescription ImageDescription = new ImageDescription();
+            ImageDescription.Show();
+        }
+        private void ImageFlags_Click(object sender, RoutedEventArgs e)
+        {
+            ImageFlags ImageFlags = new ImageFlags();
+            ImageFlags.Show();
+        }
     }
 }

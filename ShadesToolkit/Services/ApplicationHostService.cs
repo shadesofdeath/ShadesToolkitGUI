@@ -47,7 +47,7 @@ namespace ShadesToolkit.Services
         {
             await Task.CompletedTask;
 
-            if (!Application.Current.Windows.OfType<MainWindow>().Any())
+            if (!System.Windows.Application.Current.Windows.OfType<MainWindow>().Any())
             {
                 var navigationWindow = _serviceProvider.GetRequiredService<MainWindow>();
                 navigationWindow.Loaded += OnNavigationWindowLoaded;

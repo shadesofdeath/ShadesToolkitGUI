@@ -15,7 +15,7 @@
     d:DesignWidth="1000"
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
-    WindowCornerPreference="Default"
+    WindowCornerPreference="Round"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <ui:FluentWindow.InputBindings>
@@ -33,7 +33,7 @@
             
             CloseWindowByDoubleClickOnIcon="True">
             <ui:TitleBar.Icon>
-                <ui:ImageIcon Source="pack://application:,,,/Assets/logo.png" />
+                <ui:ImageIcon Source="pack://application:,,,/Assets/icon.png" />
             </ui:TitleBar.Icon>
         </ui:TitleBar>
 

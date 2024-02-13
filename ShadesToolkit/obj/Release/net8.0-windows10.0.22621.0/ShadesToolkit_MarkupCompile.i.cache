@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\App.xaml
-6-1343575148
-11562050264
-21-803431908
-233669086614
-Views\Pages\DataPage.xaml;Views\Pages\Hosts.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
+10-1059026546
+1-1606303973
+25-665632177
+243-1057666263
+Views\Pages\DataPage.xaml;Views\Pages\Hosts.xaml;Views\Pages\ImageInfo\ImageDescription.xaml;Views\Pages\ImageInfo\ImageFlags.xaml;Views\Pages\ImageInfo\ImageName.xaml;Views\Pages\IsoCreator.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
 
-True
+False
 

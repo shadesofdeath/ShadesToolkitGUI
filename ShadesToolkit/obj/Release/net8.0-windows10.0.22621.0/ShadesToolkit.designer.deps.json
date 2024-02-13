@@ -75,14 +75,14 @@
           }
         }
       },
-      "Microsoft.Dism/3.0.0": {
+      "Microsoft.Dism/3.1.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Dism.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "3.0.0.31353"
+            "fileVersion": "3.1.0.29234"
           }
         }
       },
@@ -450,6 +450,14 @@
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
+      "Microsoft.Wim/1.2.11": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Wim.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.11.42373"
+          }
+        }
+      },
       "Microsoft.Win32.Registry/5.0.0": {
         "dependencies": {
           "System.Security.AccessControl": "5.0.0",
@@ -577,7 +585,7 @@
           }
         }
       },
-      "WPF-UI/3.0.0-preview.13": {
+      "WPF-UI/3.0.0": {
         "runtime": {
           "lib/net8.0-windows7.0/Wpf.Ui.dll": {
             "assemblyVersion": "3.0.0.0",
@@ -609,12 +617,12 @@
       "path": "managedwimlib/2.5.3",
       "hashPath": "managedwimlib.2.5.3.nupkg.sha512"
     },
-    "Microsoft.Dism/3.0.0": {
+    "Microsoft.Dism/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-m7ffDVPj5AATePY427STNm7cKtAbGuNW88p+qPdqNSs8PEbeJuy8SDc0zDLHZo8E1cpQHfHgZn8z+tU+sWkJQw==",
-      "path": "microsoft.dism/3.0.0",
-      "hashPath": "microsoft.dism.3.0.0.nupkg.sha512"
+      "sha512": "sha512-pyXPufLdTakuVa9TWkF+Os/sp9OMFpe1Qjsoux8Rp/hUmBnK7JkmUK7kZ7JgWHHFAf5r6pwboLJmXU/h0ErtJw==",
+      "path": "microsoft.dism/3.1.0",
+      "hashPath": "microsoft.dism.3.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/8.0.0": {
       "type": "package",
@@ -812,6 +820,13 @@
       "path": "microsoft.netcore.platforms/5.0.0",
       "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Wim/1.2.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5XzllBgbKnQGqCcOnHr8DdsJjWxCEtyga/MPXcLCeue5T2adZywHdKtfQt7+XO6q15lu/RR1TtDGt9IuT1W1hQ==",
+      "path": "microsoft.wim/1.2.11",
+      "hashPath": "microsoft.wim.1.2.11.nupkg.sha512"
+    },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -868,12 +883,12 @@
       "path": "system.text.json/8.0.0",
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
     },
-    "WPF-UI/3.0.0-preview.13": {
+    "WPF-UI/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-57Exnba6ySbx7pe8czXpgYs5pinq9sCI5TBKsX4qo03K7a0frj0KT5vUkYWjd4xWjfThAqZxLZE4YTA5vNJoUg==",
-      "path": "wpf-ui/3.0.0-preview.13",
-      "hashPath": "wpf-ui.3.0.0-preview.13.nupkg.sha512"
+      "sha512": "sha512-YM4GtOJVRp90x6i4C8PhQc6Ic8zQz/1tt+Wrh5qNBm87jLBq/1LAB812sAlZtiVz5gLN74ERdihKI+/azElPqw==",
+      "path": "wpf-ui/3.0.0",
+      "hashPath": "wpf-ui.3.0.0.nupkg.sha512"
     }
   }
 }

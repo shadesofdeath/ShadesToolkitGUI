@@ -1,0 +1,39 @@
+﻿[18424.2932] Mounting new image.
+Wim:         [C:\Users\shades\Desktop\Yeni klasör\install.wim]
+Image Index: [1]
+Mount Guid:  [36202fe3-4f10-4db5-8801-7dee31316327]
+Mount Path:  [C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\bin\Release\net8.0-windows10.0.22621.0\Mount]
+[18424.2932] Wimserv process started for mount guid 36202fe3-4f10-4db5-8801-7dee31316327; PID is 12044
+[12044.21992] Registered log file(s) for mount of wim at C:\Users\shades\Desktop\Yeni klasör\install.wim.
+[12044.21992] Mount complete.
+[12044.21992] Received unmount request.
+[12044.21992] Unmount complete.
+[12044.9008] Wimserv exiting per terminate event.
+[12044.9008] Wimserv stopped.
+[18424.6312] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[18424.6312] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[18424.6312] [0xc1420117] RestoreMountDirectory:(422)
+[18424.6312] [0xc1420117] WIMUnmountImageHandle:(1678)
+[18424.6312] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-13 22:15:55, Error                 DISM   DISM WIM Provider: PID=18424 TID=6312 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-13 22:15:55, Error                 DISM   API: PID=18424 TID=6312 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-13 22:15:55, Error                 DISM   API: PID=18424 TID=6312 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-13 22:15:55, Error                 DISM   API: PID=18424 TID=20984 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[988.19984] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[988.19984] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[988.19984] [0xc1420117] RestoreMountDirectory:(422)
+[988.19984] [0xc1420117] WIMUnmountImageHandle:(1678)
+[988.19984] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-13 22:21:46, Error                 DISM   DISM WIM Provider: PID=988 TID=19984 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-13 22:21:46, Error                 DISM   API: PID=988 TID=19984 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-13 22:21:46, Error                 DISM   API: PID=988 TID=19984 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-13 22:21:46, Error                 DISM   API: PID=988 TID=15920 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)
+[13352.3424] [0x80004005] DeleteAndRestoreDirectory:(335): Belirtilmemiş hata
+[13352.3424] [0xc1420117] DeleteAndRestoreDirectory:(336)
+[13352.3424] [0xc1420117] RestoreMountDirectory:(422)
+[13352.3424] [0xc1420117] WIMUnmountImageHandle:(1678)
+[13352.3424] [0xc1420117] WIMUnmountImage:(2048)
+2024-02-13 22:22:18, Error                 DISM   DISM WIM Provider: PID=13352 TID=3424 onecore\base\ntsetup\opktools\dism\providers\wimprovider\dll\wimimage.cpp:93 - CWimImage::Unmount(hr:0xc1420117)
+2024-02-13 22:22:18, Error                 DISM   API: PID=13352 TID=3424 onecore\base\ntsetup\opktools\dism\api\lib\imagingcommandobject.cpp:671 - CUnmountImageCommandObject::InternalExecute(hr:0xc1420117)
+2024-02-13 22:22:18, Error                 DISM   API: PID=13352 TID=3424 InternalExecute failed - CBaseCommandObject::Execute(hr:0xc1420117)
+2024-02-13 22:22:18, Error                 DISM   API: PID=13352 TID=18944 CUnmountImageCommandObject failed - DismUnmountImageInternal(hr:0xc1420117)

@@ -55,7 +55,7 @@ namespace ShadesToolkit.Views.Pages
 
             selectButton.Click += (sender, e) =>
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
+                Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
                 openFileDialog.Filter = "WIM or ESD files (*.wim, *.esd)|*.wim;*.esd";
                 if (openFileDialog.ShowDialog() == true)
                 {
@@ -66,7 +66,7 @@ namespace ShadesToolkit.Views.Pages
 
             saveButton.Click += async (sender, e) =>
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(selectedFilePath);
                 if (selectedFilePath.EndsWith(".wim"))
                 {
