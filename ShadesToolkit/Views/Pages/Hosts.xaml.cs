@@ -1,22 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
+﻿using System.IO;
 using System.Net.Http;
-using System.Text;
+using Wpf.Ui.Controls;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Windows.UI.Core;
-using Wpf.Ui.Controls;
+using Windows.Networking;
 
 namespace ShadesToolkit.Views.Pages
 {
@@ -26,20 +13,38 @@ namespace ShadesToolkit.Views.Pages
         {
             InitializeComponent();
 
+            // Sayfa açıldığında host dosyasını kontrol et
             try
             {
                 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string hostsPath = System.IO.Path.Combine(currentDirectory, "Mount", "Windows", "System32", "drivers", "etc", "hosts");
+                string hostsPath = Path.Combine(currentDirectory, "Mount", "Windows", "System32", "drivers", "etc", "hosts");
+
                 if (File.Exists(hostsPath))
                 {
-                    textBlock.Text = File.ReadAllText(hostsPath);
+                    // Hosts dosyası varsa içeriğini textbox'a yaz
+                    string hostsContent = File.ReadAllText(hostsPath);
+                    HostTextBlock.Text = hostsContent;
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Hosts file not found: " + hostsPath);
+                    // Hosts dosyası yoksa hata mesajı göster ve pencereyi kapat
+                    Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                    messageBox.Title = "Error";
+                    messageBox.Content = "Hosts file not found.";
+                    messageBox.ShowDialogAsync();
+                    this.Close(); // Pencereyi kapat
+                    return; // Fonksiyonu sonlandır
                 }
             }
-            catch { }            
+            catch (Exception ex)
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Error";
+                messageBox.Content = $"Error checking hosts file: {ex.Message}";
+                messageBox.ShowDialogAsync();
+                this.Close(); // Pencereyi kapat
+                return; // Fonksiyonu sonlandır
+            }
         }
 
         private void convert_btn_Click(object sender, RoutedEventArgs e)
@@ -47,50 +52,92 @@ namespace ShadesToolkit.Views.Pages
             try
             {
                 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string hostsPath = System.IO.Path.Combine(currentDirectory, "Mount", "Windows", "System32", "drivers", "etc", "hosts");
-                File.WriteAllText(hostsPath, textBlock.Text);
-                System.Windows.MessageBox.Show("Host file saved.");
+                string hostsPath = Path.Combine(currentDirectory, "Mount", "Windows", "System32", "drivers", "etc", "hosts");
+
+                File.WriteAllText(hostsPath, HostTextBlock.Text);
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Succes!";
+                messageBox.Content = "Hosts file saved.";
+                messageBox.ShowDialogAsync();
             }
-            catch { }    
+            catch (Exception ex)
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Error";
+                messageBox.Content = $"Error saving the hosts file: {ex.Message}";
+                messageBox.ShowDialogAsync();
+            }
         }
 
         private async void StevenBlack_Click(object sender, RoutedEventArgs e)
         {
-            ContentPanel.Visibility = Visibility.Collapsed;
-            ProgressRing.Visibility = Visibility.Visible;
-            ProgressRing.IsIndeterminate = true;
-
-            await Task.Run(async () =>
+            try
             {
-                string url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
-                using (HttpClient client = new HttpClient())
-                {
-                    try
-                    {
-                        string content = await client.GetStringAsync(url);
-                        Dispatcher.Invoke(() =>
-                        {
-                            textBlock.Text = content;
-                        });
-                    }
-                    catch (Exception)
-                    {
-                        Dispatcher.Invoke(() =>
-                        {
-                            System.Windows.MessageBox.Show("A problem has occurred please try later");
-                        });
-                    }
-                }
-            });
+                ContentPanel.Visibility = Visibility.Collapsed;
+                ProgressRing.Visibility = Visibility.Visible;
+                ProgressRing.IsIndeterminate = true;
+                HostPage.IsEnabled = false;
 
-            ProgressRing.IsIndeterminate = false;
-            ProgressRing.Visibility = Visibility.Collapsed;
-            ContentPanel.Visibility = Visibility.Visible;
+                await Task.Run(async () =>
+                {
+                    string url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+                    using (HttpClient client = new HttpClient())
+                    {
+                        try
+                        {
+                            string content = await client.GetStringAsync(url);
+
+                            // UI'ı güncellemek için Dispatcher.Invoke kullanın
+                            Dispatcher.Invoke(() =>
+                            {
+                                HostTextBlock.Text = content;
+                            });
+                        }
+                        catch (Exception ex)
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                                messageBox.Title = "Error";
+                                messageBox.Content = $"StevenBlack hosts dosyası indirilirken hata oluştu: {ex.Message}";
+                                messageBox.ShowDialogAsync();
+                            });
+                        }
+                        finally
+                        {
+                            // UI'ı güncellemek için Dispatcher.Invoke kullanın
+                            Dispatcher.Invoke(() =>
+                            {
+                                ProgressRing.IsIndeterminate = false;
+                                ProgressRing.Visibility = Visibility.Collapsed;
+                                ContentPanel.Visibility = Visibility.Visible;
+                                HostPage.IsEnabled = true;
+                            });
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Error";
+                messageBox.Content = $"StevenBlack hosts dosyası indirilirken hata oluştu: {ex.Message}";
+                await messageBox.ShowDialogAsync();
+            }
+            finally
+            {
+                ProgressRing.IsIndeterminate = false;
+                ProgressRing.Visibility = Visibility.Collapsed;
+                ContentPanel.Visibility = Visibility.Visible;
+                HostPage.IsEnabled = true;
+            }
         }
 
         private void default_small_Click(object sender, RoutedEventArgs e)
         {
-            string hostsContent = @"# Copyright (c) 1993-2009 Microsoft Corp.
+            try
+            {
+                string hostsContent = @"# Copyright (c) 1993-2009 Microsoft Corp.
 #
 # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
 #
@@ -113,7 +160,22 @@ namespace ShadesToolkit.Views.Pages
 #	::1             localhost
 ";
 
-            textBlock.Text = hostsContent;
+                HostTextBlock.Text = hostsContent;
+            }
+            catch (Exception ex)
+            {
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Hata";
+                messageBox.Content = $"Varsayılan hosts dosyası yüklenirken hata oluştu: {ex.Message}";
+                messageBox.ShowDialogAsync();
+            }
+            finally
+            {
+                ProgressRing.IsIndeterminate = false;
+                ProgressRing.Visibility = Visibility.Collapsed;
+                ContentPanel.Visibility = Visibility.Visible;
+                HostPage.IsEnabled = true;
+            }
         }
     }
 }

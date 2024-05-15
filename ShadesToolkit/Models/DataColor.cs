@@ -3,8 +3,6 @@
 // Copyright (C) Leszek Pomianowski and WPF UI Contributors.
 // All Rights Reserved.
 
-using System.Windows.Media;
-
 namespace ShadesToolkit.Models
 {
     public struct DataColor

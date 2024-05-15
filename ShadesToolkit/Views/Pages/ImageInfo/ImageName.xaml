@@ -15,7 +15,7 @@
     WindowStyle="None"
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
+    WindowBackdropType="None"
     WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">

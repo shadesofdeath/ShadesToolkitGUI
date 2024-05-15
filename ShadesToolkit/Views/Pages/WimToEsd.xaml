@@ -15,7 +15,7 @@
     WindowStyle="None"
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
+    WindowBackdropType="None"
     WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">
@@ -35,7 +35,7 @@
             <ui:Button VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="saveButton" Content="Save" Width="120" Margin="0,20,0,0"/>
             <WrapPanel Margin="0,15,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <ProgressBar x:Name="progress" Visibility="Hidden"  IsIndeterminate="False" Height="4" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Label x:Name="progressPercentageLabel" Content="" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,0,0"/>
+                <Label x:Name="progressPercentageLabel" Content="" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0,0,0"/>
             </WrapPanel>
             <Label x:Name="progressLabel" Content="" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0"/>
         </StackPanel>

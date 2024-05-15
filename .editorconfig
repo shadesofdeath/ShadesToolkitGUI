@@ -8,3 +8,30 @@ dotnet_diagnostic.IDE0022.severity = none
 
 # CS1998: Zaman uyumsuz yöntemde 'await' işleçleri yok ve zaman uyumlu çalışacak
 dotnet_diagnostic.CS1998.severity = silent
+
+# CS8618: Null atanamaz alan, oluşturucudan çıkış yaparken null olmayan bir değer içermelidir. Alanı null atanabilir olarak bildirmeyi düşünün.
+dotnet_diagnostic.CS8618.severity = silent
+
+# CS8604: Olası null başvuru bağımsız değişkeni.
+dotnet_diagnostic.CS8604.severity = none
+
+# CS8600: Null sabit değeri veya olası null değeri, boş değer atanamaz türe dönüştürülüyor.
+dotnet_diagnostic.CS8600.severity = none
+
+# CS8601: Olası null başvuru ataması.
+dotnet_diagnostic.CS8601.severity = none
+
+# CA1416: Platform uyumluluğunu doğrula
+dotnet_diagnostic.CA1416.severity = none
+
+# SYSLIB0014: Tür veya üye artık kullanılmıyor
+dotnet_diagnostic.SYSLIB0014.severity = none
+
+# CS8612: Türdeki başvuru türlerinin boş değer atanabilirliği, örtük olarak uygulanan üye ile eşleşmiyor.
+dotnet_diagnostic.CS8612.severity = none
+
+# CS8603: Olası null başvuru dönüşü.
+dotnet_diagnostic.CS8603.severity = none
+
+# CS0414: 'ISODownloader.sharedSession' alanı atanır ancak değeri hiçbir zaman kullanılmaz
+dotnet_diagnostic.CS0414.severity = none

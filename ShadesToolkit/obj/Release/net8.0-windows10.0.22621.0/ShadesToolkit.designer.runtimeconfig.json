@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\shades\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\shades\\.nuget\\packages",
+      "C:\\Users\\berka\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\berka\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

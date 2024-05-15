@@ -7,6 +7,7 @@
     xmlns:models="clr-namespace:ShadesToolkit.Models"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="WimToEsd"
+    x:Name="HostPage"
     MaxWidth="750"
     MaxHeight="500"
     MinHeight="500"
@@ -15,7 +16,7 @@
     WindowStyle="None"
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
+    WindowBackdropType="None"
     WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">
@@ -48,7 +49,7 @@
                     </ui:Button>
 
                 </WrapPanel>
-                <ui:TextBox x:Name="textBlock" Width="700" Height="350" AcceptsReturn="True" AcceptsTab="True"/>
+                <ui:TextBox x:Name="HostTextBlock" Width="700" Height="350" AcceptsReturn="True" AcceptsTab="True"/>
             </StackPanel>
         </StackPanel>
     </Grid>

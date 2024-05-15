@@ -15,7 +15,7 @@
     WindowStyle="None"
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
+    WindowBackdropType="None"
     WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">
@@ -34,7 +34,7 @@
                 <ui:Button x:Name="CreateISO" Content="Create ISO" Margin="0,24,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120"/>
             </StackPanel>
             <StackPanel Margin="0,20,0,0">
-                <ProgressBar x:Name="ProgressProcess" Visibility="Hidden" IsIndeterminate="False" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <ProgressBar x:Name="ProgressProcess" Visibility="Hidden" IsIndeterminate="True" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <ui:TextBlock x:Name="ProcessText" Visibility="Hidden" Text="Awaiting processing.." VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,0"/>
             </StackPanel>
         </StackPanel>

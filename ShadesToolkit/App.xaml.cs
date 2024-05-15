@@ -42,8 +42,10 @@ namespace ShadesToolkit
 
                 services.AddSingleton<Source>();
                 services.AddSingleton<SourceViewModel>();
-                services.AddSingleton<DataPage>();
-                services.AddSingleton<DataViewModel>();
+                services.AddSingleton<RemoveApps>();
+                services.AddSingleton<RemoveAppsViewModel>();
+                services.AddSingleton<Components>();
+                services.AddSingleton<ComponentsViewModel>();
                 services.AddSingleton<SettingsPage>();
                 services.AddSingleton<SettingsViewModel>();
             }).Build();

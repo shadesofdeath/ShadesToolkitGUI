@@ -1,10 +1,6 @@
-﻿// This Source Code Form is subject to the terms of the MIT License.
-// If a copy of the MIT was not distributed with this file, You can obtain one at https://opensource.org/licenses/MIT.
-// Copyright (C) Leszek Pomianowski and WPF UI Contributors.
-// All Rights Reserved.
-
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Data;
+using Wpf.Ui.Appearance;
 
 namespace ShadesToolkit.Helpers
 {
@@ -17,12 +13,12 @@ namespace ShadesToolkit.Helpers
                 throw new ArgumentException("ExceptionEnumToBooleanConverterParameterMustBeAnEnumName");
             }
 
-            if (!Enum.IsDefined(typeof(Wpf.Ui.Appearance.ApplicationTheme), value))
+            if (!Enum.IsDefined(typeof(ApplicationTheme), value))
             {
                 throw new ArgumentException("ExceptionEnumToBooleanConverterValueMustBeAnEnum");
             }
 
-            var enumValue = Enum.Parse(typeof(Wpf.Ui.Appearance.ApplicationTheme), enumString);
+            var enumValue = Enum.Parse(typeof(ApplicationTheme), enumString);
 
             return enumValue.Equals(value);
         }
@@ -34,7 +30,7 @@ namespace ShadesToolkit.Helpers
                 throw new ArgumentException("ExceptionEnumToBooleanConverterParameterMustBeAnEnumName");
             }
 
-            return Enum.Parse(typeof(Wpf.Ui.Appearance.ApplicationTheme), enumString);
+            return Enum.Parse(typeof(ApplicationTheme), enumString);
         }
     }
 }

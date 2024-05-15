@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\obj\Release\net7.0-windows10.0.22621.0\
+D:\Projeler\ShadesToolkit\ShadesToolkit\obj\Release\net7.0-windows10.0.22621.0\
 ShadesToolkit
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
-C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\App.xaml
-4422644930
-11562050264
-19-542101752
-231505467489
-Views\Pages\DataPage.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Windows\MainWindow.xaml;
+D:\Projeler\ShadesToolkit\ShadesToolkit\App.xaml
+13-1968331611
+1-1606303973
+29-630881250
+244232138641
+Views\Pages\Components.xaml;Views\Pages\DownloadOptionWindow.xaml;Views\Pages\Hosts.xaml;Views\Pages\ImageInfo\ImageDescription.xaml;Views\Pages\ImageInfo\ImageFlags.xaml;Views\Pages\ImageInfo\ImageName.xaml;Views\Pages\IsoCreator.xaml;Views\Pages\ISODownloader.xaml;Views\Pages\RemoveApps.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
 
-True
+False
 

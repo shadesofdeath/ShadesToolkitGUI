@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\obj\Release\net8.0-windows10.0.22621.0\
+D:\Projeler\ShadesToolkit\ShadesToolkit\obj\Release\net8.0-windows10.0.22621.0\
 ShadesToolkit
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
-C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\App.xaml
-10-1059026546
+D:\Projeler\ShadesToolkit\ShadesToolkit\App.xaml
+13-1968331611
 1-1606303973
-25-665632177
-243-1057666263
-Views\Pages\DataPage.xaml;Views\Pages\Hosts.xaml;Views\Pages\ImageInfo\ImageDescription.xaml;Views\Pages\ImageInfo\ImageFlags.xaml;Views\Pages\ImageInfo\ImageName.xaml;Views\Pages\IsoCreator.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
+29642746111
+243466157996
+Views\Pages\Components.xaml;Views\Pages\DownloadOptionWindow.xaml;Views\Pages\Hosts.xaml;Views\Pages\ImageInfo\ImageDescription.xaml;Views\Pages\ImageInfo\ImageFlags.xaml;Views\Pages\ImageInfo\ImageName.xaml;Views\Pages\IsoCreator.xaml;Views\Pages\ISODownloader.xaml;Views\Pages\RemoveApps.xaml;Views\Pages\SettingsPage.xaml;Views\Pages\Source.xaml;Views\Pages\WimToEsd.xaml;Views\Windows\MainWindow.xaml;
 
 False
 

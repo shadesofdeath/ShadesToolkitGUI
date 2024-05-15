@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json;
+using System.Diagnostics;
 using System.IO;
-using Newtonsoft.Json;
 using Wpf.Ui.Controls;
 
 namespace ShadesToolkit.Views.Pages.ImageInfo
@@ -23,12 +23,18 @@ namespace ShadesToolkit.Views.Pages.ImageInfo
 
             if (imageName.Contains(" "))
             {
-                System.Windows.MessageBox.Show("Do not leave spaces in the Image name.");
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Warning";
+                messageBox.Content = "Do not leave spaces in the Image flags.";
+                messageBox.ShowDialogAsync();
                 return;
             }
             if (string.IsNullOrWhiteSpace(imageName))
             {
-                System.Windows.MessageBox.Show("Image name cannot be left blank.");
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Warning";
+                messageBox.Content = "Image flags cannot be left blank.";
+                messageBox.ShowDialogAsync();
                 return;
             }
             string appPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -36,9 +42,9 @@ namespace ShadesToolkit.Views.Pages.ImageInfo
             string jsonPath = Path.Combine(appPath, "wimFiles.json");
 
             var wimFiles = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(jsonPath));
-            string wimFilePath = wimFiles[0]; 
+            string wimFilePath = wimFiles[0];
 
-            string command = $"wimlib-imagex info \"{wimFilePath}\" 1 --image-property FLAGS={imageName} --image-property WINDOWS/EDITIONID={imageName}" ;
+            string command = $"wimlib-imagex info \"{wimFilePath}\" 1 --image-property FLAGS={imageName} --image-property WINDOWS/EDITIONID={imageName}";
 
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
@@ -58,12 +64,19 @@ namespace ShadesToolkit.Views.Pages.ImageInfo
 
             if (!string.IsNullOrEmpty(errorOutput))
             {
-                System.Windows.MessageBox.Show("Operation failed: " + errorOutput);
+                Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                messageBox.Title = "Failed";
+                messageBox.Content = "Failed: " + errorOutput;
+                messageBox.ShowDialogAsync();
                 return;
             }
-            System.Windows.MessageBox.Show($"Image name changed to '{imageName}'.");
-            var sourcePage = new ShadesToolkit.Views.Pages.Source(new ShadesToolkit.ViewModels.Pages.SourceViewModel());
-            sourcePage.sourceDataGrid.Items.Refresh();
+            Thread.Sleep(6000);
+            Wpf.Ui.Controls.MessageBox messageBoxFailed = new Wpf.Ui.Controls.MessageBox();
+            messageBoxFailed.Title = "Succes";
+            messageBoxFailed.Content = $"Image flags changed to '{imageName}'.";
+            messageBoxFailed.ShowDialogAsync();
+            var sourcePage = new Source(new ViewModels.Pages.SourceViewModel());
+            sourcePage.sourceListView.Items.Refresh();
         }
     }
 

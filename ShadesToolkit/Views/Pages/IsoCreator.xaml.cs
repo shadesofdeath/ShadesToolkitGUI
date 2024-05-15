@@ -1,10 +1,5 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using Microsoft.Win32;
 using Wpf.Ui.Controls;
 
 namespace ShadesToolkit.Views.Pages
@@ -80,11 +75,11 @@ namespace ShadesToolkit.Views.Pages
                         ProgressProcess.Visibility = Visibility.Hidden;
                         if (process.ExitCode == 0)
                         {
-                            ProcessText.Text = "Process completed successfully";
+                            ProcessText.Text = "ISO Created successfully";
                         }
                         else
                         {
-                            ProcessText.Text = $"Process failed with exit code {process.ExitCode}. Output: {process.StandardOutput.ReadToEnd()}";
+                            ProcessText.Text = $"Failed with exit code {process.ExitCode}. Output: {process.StandardOutput.ReadToEnd()}";
                         }
                     });
                 }

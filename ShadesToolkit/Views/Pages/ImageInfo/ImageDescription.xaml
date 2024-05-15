@@ -15,7 +15,7 @@
     WindowStyle="None"
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
-    WindowBackdropType="Mica"
+    WindowBackdropType="None"
     WindowCornerPreference="Default"
     WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid">
@@ -23,7 +23,7 @@
             <ui:TitleBar Title="Image Description" MinWidth="400" ShowClose="True" ShowMinimize="False" ShowMaximize="False" CanMaximize="False"/>
             <ui:TextBlock Text="Image Description" Margin="14,8,0,2" FontSize="12" Opacity="0.8"/>
             <WrapPanel Margin="10,2,0,0">
-                <ui:TextBox x:Name="ImageNameTextBox" PlaceholderText="Image Name.." Width="300"/>
+                <ui:TextBox x:Name="ImageNameTextBox" PlaceholderText="Image Description.." Width="300"/>
                 <ui:Button x:Name="SaveButton" Content="Save" Margin="8,0,0,0" Height="34" Width="60" BorderThickness="0" Click="SaveButton_Click"/>
             </WrapPanel>
         </StackPanel>

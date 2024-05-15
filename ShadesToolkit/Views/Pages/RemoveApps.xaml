@@ -1,0 +1,73 @@
+<Page x:Class="ShadesToolkit.Views.Pages.RemoveApps"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ShadesToolkit.Views.Pages"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:models="clr-namespace:ShadesToolkit.Models"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="Remove Apps"
+      Margin="0,8,0,0"
+      x:Name="RemoveAppsPage"
+      d:DataContext="{d:DesignInstance local:RemoveApps, IsDesignTimeCreatable=False}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      ScrollViewer.CanContentScroll="False"
+      mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Margin="10" x:Name="RemoveAppsButtons">
+            <ui:Button  CornerRadius="8" Height="62" Width="80" Click="Refresh_Click">
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="ArrowCounterclockwise16"/>
+                    <ui:TextBlock Text="Refresh" Margin="0,6,0,0"/>
+                </StackPanel>
+            </ui:Button>
+
+            <ui:Button CornerRadius="8" Height="62" Width="80" Margin="8,0,0,0" Click="Remove_Click">
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="Delete24"/>
+                    <ui:TextBlock Text="Remove" Margin="0,6,0,0"/>
+                </StackPanel>
+            </ui:Button>
+
+            <ui:Button CornerRadius="8" Height="62" Width="92" Margin="8,0,0,0" Click="AddApp_Click">
+                <StackPanel>
+                    <ui:SymbolIcon Symbol="Add16"/>
+                    <ui:TextBlock Text="Add AppX" Margin="0,6,0,0"/>
+                </StackPanel>
+            </ui:Button>
+        </WrapPanel>
+
+        <Grid Grid.Row="1">
+            <ui:ProgressRing x:Name="ProgressRing" IsIndeterminate="True" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed"/>
+            <ui:ListView x:Name="AppxPackagesListView" BorderThickness="0" Margin="0,0,0,12" Visibility="Collapsed">
+                <ui:ListView.View>
+                    <ui:GridView>
+                        <ui:GridViewColumn Width="56">
+                            <ui:GridViewColumn.Header>
+                                <ui:ToggleSwitch x:Name="MasterToggleSwitch" Checked="MasterToggleSwitch_Checked" Unchecked="MasterToggleSwitch_Unchecked" />
+                            </ui:GridViewColumn.Header>
+                            <ui:GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ui:ToggleSwitch IsChecked="{Binding IsChecked, Mode=TwoWay}" IsEnabled="{Binding IsEnabled}" />
+
+                                </DataTemplate>
+                            </ui:GridViewColumn.CellTemplate>
+                        </ui:GridViewColumn>
+                        <ui:GridViewColumn Header="App Name" Width="300" DisplayMemberBinding="{Binding AppName}" />
+                        <ui:GridViewColumn Header="Display Name" Width="300" DisplayMemberBinding="{Binding DisplayName}" />
+                        <ui:GridViewColumn Header="Version" Width="150" DisplayMemberBinding="{Binding Version}" />
+                    </ui:GridView>
+                </ui:ListView.View>
+            </ui:ListView>
+        </Grid>
+
+    </Grid>
+</Page>

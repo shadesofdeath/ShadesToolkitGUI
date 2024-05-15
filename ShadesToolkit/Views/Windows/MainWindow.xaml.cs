@@ -12,6 +12,7 @@ namespace ShadesToolkit.Views.Windows
     {
         public MainWindowViewModel ViewModel { get; }
 
+        [Obsolete]
         public MainWindow(
             MainWindowViewModel viewModel,
             INavigationService navigationService,

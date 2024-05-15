@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Pages\DownloadOptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Hosts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,6 +21,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\Pages\DownloadOptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\Hosts.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -30,13 +36,19 @@
     <Page Update="Views\Pages\ImageInfo\ImageName.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\ISODownloader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\IsoCreator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Components.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Source.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\DataPage.xaml">
+    <Page Update="Views\Pages\RemoveApps.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\SettingsPage.xaml">

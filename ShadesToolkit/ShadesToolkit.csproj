@@ -12,6 +12,19 @@
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\logo.png" />
+    <None Remove="Helpers\ProvisionedApps.json" />
+  </ItemGroup>
+
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
@@ -21,13 +34,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.61" />
     <PackageReference Include="ManagedWimLib" Version="2.5.3" />
     <PackageReference Include="Microsoft.Dism" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Wim" Version="1.2.11" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="WPF-UI" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="WPF-UI" Version="3.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0-preview.3.24172.9" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\logo.png" />
+    <EmbeddedResource Include="Helpers\ProvisionedApps.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +53,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\ImageInfo\ImageDescription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\ISODownloader.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

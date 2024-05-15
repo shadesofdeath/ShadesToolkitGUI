@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="ShadesToolkit"
+    x:Name="SourcePage"
     d:DesignHeight="450"
+    Margin="0,20,0,0"
     d:DesignWidth="800"
     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
@@ -40,6 +42,13 @@
                 </StackPanel>
             </ui:Button>
 
+            <ui:Button x:Name="Refresh_Btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="Refresh_Btn_Click">
+                <StackPanel>
+                    <ui:SymbolIcon FontSize="20" Symbol="ArrowCounterclockwise16" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="Refresh" Margin="0,8,0,0"/>
+                </StackPanel>
+            </ui:Button>
+
             <ui:Button x:Name="ISO_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="Iso_Creator_Click">
                 <StackPanel>
                     <ui:SymbolIcon FontSize="20" Symbol="Cd16" Margin="0,8,0,0"/>
@@ -57,7 +66,14 @@
             <ui:Button x:Name="host_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="host_btn_Click">
                 <StackPanel>
                     <ui:SymbolIcon FontSize="20" Symbol="Book24" Margin="0,8,0,0"/>
-                    <ui:TextBlock Text="Hosts Editor" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="Host Editor" Margin="0,8,0,0"/>
+                </StackPanel>
+            </ui:Button>
+
+            <ui:Button x:Name="iso_download_btn" BorderThickness="0" MinWidth="60" CornerRadius="8" Margin="10,0,0,0" Click="iso_download_btn_Click">
+                <StackPanel>
+                    <ui:SymbolIcon FontSize="20" Symbol="DrawerArrowDownload20" Margin="0,8,0,0"/>
+                    <ui:TextBlock Text="ISO Download" Margin="0,8,0,0"/>
                 </StackPanel>
             </ui:Button>
         </WrapPanel>
@@ -70,142 +86,78 @@
             </ui:TextBlock>
         </StackPanel>
 
-        <ui:DataGrid Grid.Row="1" x:Name="sourceDataGrid" AutoGenerateColumns="False"  IsReadOnly="True" ContextMenuOpening="sourceDataGrid_ContextMenuOpening">
-
-            <ui:DataGrid.ContextMenu>
+        <ui:ListView Grid.Row="1" x:Name="sourceListView" Background="Transparent" BorderThickness="0" ContextMenuOpening="sourceListView_ContextMenuOpening">
+            <ui:ListView.ContextMenu>
                 <ContextMenu x:Name="contextMenuControl">
-                    <MenuItem Header="Mount" Click="Mount_ClickAsync">
+                    <ui:MenuItem Header="Mount" Click="Mount_ClickAsync">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="ArrowCurveUpRight20"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Unmount" Click="Unmount_ClickAsync">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Unmount" Click="Unmount_ClickAsync">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="ArrowCurveDownLeft20"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Forget" Click="Forget_ClickAsync">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Forget" Click="Forget_ClickAsync">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="Delete20"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Open file directory" Click="OpenFileDirectory_ClickAsync">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Open file directory" Click="OpenFileDirectory_ClickAsync">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="FolderOpen24"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Open mount directory" Click="OpenMountDirectory_Click">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Open mount directory" Click="OpenMountDirectory_Click">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="ArrowJoin20"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Create ISO" Click="CreateISO_Click">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Create ISO" Click="CreateISO_Click">
                         <MenuItem.Icon>
                             <ui:SymbolIcon Symbol="Cd16"/>
                         </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Edit">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Export WIM" Click="ExportWim_ClickAsync">
                         <MenuItem.Icon>
-                            <ui:SymbolIcon Symbol="Edit24"/>
+                            <ui:SymbolIcon Symbol="FolderZip24"/>
                         </MenuItem.Icon>
-                        <MenuItem Header="Name" Click="ImageName_Click">
+                    </ui:MenuItem>
+                    <ui:MenuItem Header="Edit">
+                        <ui:MenuItem.Icon>
+                            <ui:SymbolIcon Symbol="Edit24"/>
+                        </ui:MenuItem.Icon>
+                        <ui:MenuItem Header="Name" Click="ImageName_Click">
                             <MenuItem.Icon>
-                                <ui:SymbolIcon Symbol="Rename28"/>
+                                <ui:SymbolIcon Symbol="Clover24"/>
                             </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Description" Click="ImageDescription_Click">
+                        </ui:MenuItem>
+                        <ui:MenuItem Header="Description" Click="ImageDescription_Click">
                             <MenuItem.Icon>
-                                <ui:SymbolIcon Symbol="Rename28"/>
+                                <ui:SymbolIcon Symbol="Clover24"/>
                             </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Flags" Click="ImageFlags_Click">
+                        </ui:MenuItem>
+                        <ui:MenuItem Header="Flags" Click="ImageFlags_Click">
                             <MenuItem.Icon>
-                                <ui:SymbolIcon Symbol="Rename28"/>
+                                <ui:SymbolIcon Symbol="Clover24"/>
                             </MenuItem.Icon>
-                        </MenuItem>
-                    </MenuItem>
+                        </ui:MenuItem>
+                    </ui:MenuItem>
                 </ContextMenu>
-
-            </ui:DataGrid.ContextMenu>
-            <ui:DataGrid.Columns>
-                <DataGridTextColumn MinWidth="180" Header="Operating System" Binding="{Binding OS}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,20,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="210" Header="Description" Binding="{Binding Description}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,20,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="90" Header="Architecture" Binding="{Binding Architecture}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="120" Header="Flags" Binding="{Binding Flags}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="42" Header="Index" Binding="{Binding Index}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="50" Header="Size" Binding="{Binding Size}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTemplateColumn MinWidth="160" Header="Status">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="8,0,8,0">
-                                <TextBlock Text="{Binding Status}" VerticalAlignment="Center"/>
-                                <ui:SymbolIcon Foreground="Red" Margin="0,0,8,0" Symbol="Dismiss32" Visibility="{Binding IsInvalidStatus}"/>
-                                <ui:SymbolIcon Foreground="#03C988" Symbol="Checkmark32" Margin="8,0,8,0" Visibility="{Binding IsMountedStatus}"/>
-                                <ui:ProgressRing x:Name="progressRing"  Progress="{Binding Progress}" Width="16" Height="16" Margin="8,0,0,0" Visibility="{Binding ProgressRingVisibility}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTextColumn MinWidth="120" Header="Language" Binding="{Binding Language}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Width="Auto" Header="Last Changes" Binding="{Binding LastChanges}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="4,0,8,0"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-            </ui:DataGrid.Columns>
-        </ui:DataGrid>
+            </ui:ListView.ContextMenu>
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn Header="Operating System" DisplayMemberBinding="{Binding OS}" Width="240"/>
+                    <ui:GridViewColumn Header="Architecture" DisplayMemberBinding="{Binding Architecture}" Width="100"/>
+                    <ui:GridViewColumn Header="Flags" DisplayMemberBinding="{Binding Flags}" Width="160"/>
+                    <ui:GridViewColumn Header="Index" DisplayMemberBinding="{Binding Index}" Width="60"/>
+                    <ui:GridViewColumn Header="Size" DisplayMemberBinding="{Binding Size}" Width="180"/>
+                    <ui:GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="135"/>
+                    <ui:GridViewColumn Header="Language" DisplayMemberBinding="{Binding Language}" Width="120"/>
+                    <ui:GridViewColumn Header="Last Changes" DisplayMemberBinding="{Binding LastChanges}" Width="Auto"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
     </Grid>
 </Page>

@@ -1,7 +1,16 @@
-﻿C:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\obj\Release\net7.0-windows10.0.22621.0\GeneratedInternalTypeHelper.g.cs
+﻿D:\Projeler\ShadesToolkit\ShadesToolkit\obj\Release\net7.0-windows10.0.22621.0\GeneratedInternalTypeHelper.g.cs
 
-FC:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\Views\Pages\DataPage.xaml;;
-FC:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\Views\Pages\SettingsPage.xaml;;
-FC:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\Views\Pages\Source.xaml;;
-FC:\Users\shades\Desktop\ShadesToolkit\ShadesToolkit\Views\Windows\MainWindow.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\Components.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\DownloadOptionWindow.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\Hosts.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\ImageInfo\ImageDescription.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\ImageInfo\ImageFlags.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\ImageInfo\ImageName.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\IsoCreator.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\ISODownloader.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\RemoveApps.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\SettingsPage.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\Source.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Pages\WimToEsd.xaml;;
+FD:\Projeler\ShadesToolkit\ShadesToolkit\Views\Windows\MainWindow.xaml;;
 

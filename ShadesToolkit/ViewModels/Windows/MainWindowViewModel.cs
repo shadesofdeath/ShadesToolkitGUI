@@ -24,9 +24,15 @@ namespace ShadesToolkit.ViewModels.Windows
             },
             new NavigationViewItem()
             {
-                Content = "Data",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
-                TargetPageType = typeof(Views.Pages.DataPage)
+                Content = "Remove Apps",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Apps24 },
+                TargetPageType = typeof(Views.Pages.RemoveApps)
+            },
+            new NavigationViewItem()
+            {
+                Content = "Components",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Box20 },
+                TargetPageType = typeof(Views.Pages.Components)
             }
         };
 

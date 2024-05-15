@@ -1,15 +1,8 @@
 ﻿using ManagedWimLib;
-using Microsoft.Win32;
-using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Threading;
 using Wpf.Ui.Controls;
 
